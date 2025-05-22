@@ -168,7 +168,7 @@ public class OutputGUI extends JFrame implements WebcamMotionListener {
         g2d.drawImage(webcamMotionEvent.getCurrentImage(), jtm.getImageSize(),0,-jtm.getImageSize(),jtm.getImageSize(), null);
         g2d.dispose();
         float[][][][] inputData = JavaTeachableMachine.prepareDataFromImage(img);
-        textAreaConsole.add(jtm.getOutput(savedModelBundle, inputData) + ". Model assumes Class: " + jtm.getClassPrediction(savedModelBundle, inputData) + "\n");
+        textAreaConsole.add(jtm.getOutput(savedModelBundle, inputData) + "Model assumes Class: " + jtm.getClassPrediction(savedModelBundle, inputData) + "\n");
         output.setText("");
         for (String text : textAreaConsole) output.append(text);
         if (textAreaConsole.size() > 50) textAreaConsole.poll();
